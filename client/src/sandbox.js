@@ -8,11 +8,27 @@ class Timer extends Component {
 
 
   render() {
-    
+    const minutes = 20;
+    let pausation = false;
+    const toggle = (pausation) => {
+      console.log("clicked")
+     if (pausation === false) {
+         pausation = true;
+      } else {
+        pausation = false;}
     };
 
     return (
-      <ReactCountdownClock/>
+      <ReactCountdownClock
+        seconds={60 * minutes}
+        color="#232323"
+        alpha={0.5}
+        size={100}
+        onComplete={this.myCallback}
+        paused={pausation}
+        weight={20}
+        onClick={()=> toggle(pausation)}
+      />
     );
   }
 }
