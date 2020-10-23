@@ -8,10 +8,19 @@ class App extends Component {
     super()
     this.state = {
       user: {
-        name: ""
+        name: "",
+        id: 1
+      },
+      tasks: [
+        {
+          title:"Do some weird stuff",
+          status: "open",
+          workSessions: ""
+        }
+      ],
+      workSessions: []
       }
     }
-  }
 
 render() {
   return (
