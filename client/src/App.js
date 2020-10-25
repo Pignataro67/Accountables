@@ -11,15 +11,10 @@ class App extends Component {
         name: "",
         id: 1
       },
-      tasks: [
-        {
-          title:"Do some weird stuff",
-          status: "open",
-          workSessions_id: null
-        }
-      ],
+      tasks: [],
       workSessions: [],
-      currentSession: []
+      currentSession: [],
+      currentTasks: []
       }
     }
 
@@ -37,7 +32,7 @@ class App extends Component {
         this.setState({
           ...this.state,
           workSessions: sessions
-        })
+        }, ()=> {getCurrentSession()})
       }
   
       if (this.state.currentSession.length === 0) {
@@ -69,8 +64,11 @@ class App extends Component {
           this.setState({
             ...this.state,
             currentSession: wsData
+          })
+        })
       }
     }
+  }
 
 render() {
   return (
