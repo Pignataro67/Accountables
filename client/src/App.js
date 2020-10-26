@@ -61,10 +61,54 @@ class App extends Component {
               user_id: this.state.user.id
           })
         })
+        .then(resp => resp.json())
+          .then(wsData => {
+            this.setState({
+              ...this.state,
+              currentSession: wsData
+            }, )
+          })
+        }
       }
     }
   }
+  
+  componentDidUpdate(){
 
+
+    const getOpenTasks = () => {
+      fetch("http://localhost:3001/tasks")
+      .then(res => res.json())
+      .then(data => filterOpenTasks(data))
+    }
+
+    const filterOpenTasks = tasks => {
+      const openTasks = tasks.filter(task => {
+        return task.status === "open"
+
+
+        reassignWS(openTasks)
+      })
+    }
+
+    const reassignWS = openTasks => {
+      openTasks.map(task => {
+        fetch(`http://localhost:3001/tasks/${task.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            work_session_id: this.state.currentSession.id
+          })
+        })
+      })
+    }
+    
+    getOpenTasks();
+  };
+  
 render() {
   return (
       <div className="App">
