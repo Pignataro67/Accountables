@@ -42,7 +42,23 @@ class App extends Component {
             const sessions = this.state.workSessions.filter(session => session !== lastSession)  
           this.setState({
             ...this.state,
-            currentSession: wsData
+            currentSession: lastSession,
+            workSessions: sessions
+          }, )
+
+        } else {
+          fetch("http://localhost:3001/work_sessions", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              start_time: "",
+              end_time: "",
+              total_time: 20,
+              note: "",
+              user_id: this.state.user.id
           })
         })
       }
