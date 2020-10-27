@@ -23,14 +23,6 @@ import ReactCountdownClock from "react-countdown-clock";
 
     render() {
       const minutes = 20;
-      let pausation = false;
-      const toggle = (pausation) => {
-        console.log("clicked")
-       if (pausation === false) {
-           pausation = true;
-        } else {
-          pausation = false;}
-      };
 
       return (
         <ReactCountdownClock
@@ -39,10 +31,21 @@ import ReactCountdownClock from "react-countdown-clock";
           alpha={0.5}
           size={150}
           onComplete={this.myCallback}
-          paused={pausation}
+          paused= {this.state.pausation}
           weight={20}
           onClick={()=> toggle(pausation)}
         />
+          <div>
+
+          </div>
+            <div className="timer-btn">
+            {this.state.pausation ? (
+            <button className="start-button" onClick={() =>this.toggle()} >Start</button>):
+
+            (<button onClick={()=> this.toggle()} 
+            className="pause-button">Pause</button>)
+          }
+        </div>
       );
     }
   }
