@@ -3,6 +3,14 @@ import ReactCountdownClock from "react-countdown-clock";
 
   class Timer extends Component {
 
+    constructor() {
+      super()
+      this.state = {
+      allSessions: [],
+      pausation: false
+      }
+    }
+
     myCallback = () => {
       return "Done";
     };
