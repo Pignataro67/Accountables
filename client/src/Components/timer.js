@@ -15,6 +15,12 @@ import ReactCountdownClock from "react-countdown-clock";
       return "Done";
     };
 
+    toggle = (pausation) => {
+      this.setState({
+        pausation: !this.state.pausation
+      })
+    };
+
     render() {
       const minutes = 20;
       let pausation = false;
