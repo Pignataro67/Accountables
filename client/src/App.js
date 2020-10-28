@@ -11,7 +11,7 @@ class App extends Component {
         name: "",
         id: 1
       },
-      tasks: [],
+      allTasks: [],
       workSessions: [],
       currentSession: [],
       currentTasks: []
@@ -71,10 +71,35 @@ class App extends Component {
         }
       }
     }
+
+    fetch("http://localhost:3001/tasks/")
+    .then(resp => resp.json())
+    .then(tasks => {
+      filterCurrentTasks(tasks);
+      getAllTasks(tasks);
+    })
+
+    const filterCurrentTasks = tasks => {
+
+      const currentTasks = tasks.filter(task => {
+        return task.work_session_id === this.state.currentSession.id
+      })
+      
+      this.setState({
+        ...this.state,
+        currentTasks: currentTasks
+      })
+    }
+
+    const getAllTasks = tasks => {
+      this.setState({
+        ...this.state,
+        allTasks: tasks
+      })
+    }
   }
   
-  componentDidUpdate(){
-
+  componentDidUpdate() {
 
     const getOpenTasks = () => {
       fetch("http://localhost:3001/tasks")
