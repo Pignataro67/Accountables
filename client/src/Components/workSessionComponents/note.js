@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 note = () =>  {
   
   return (
-    <h2>Hello</h2>
+    <Fragment>
+        <form>
+          <textarea>
+
+          </textarea>
+        </form>
+    </Fragment>
   )
 }
-
 
 export default note;
