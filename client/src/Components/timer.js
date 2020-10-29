@@ -6,22 +6,29 @@ import ReactCountdownClock from "react-countdown-clock";
     constructor() {
       super()
       this.state = {
-      allSessions: [],
-      pausation: false
+      pausation: true,
+      class: "stop-button",
+      firstClick: false,
+      stopped: false
       }
     }
 
-    myCallback = () => {
-      alert("now the worksession is complete");
-      callNote()
-    };
-
-    toggle = (pausation) => {
+    wrapUpSession = () => {
       this.setState({
-        pausation: !this.state.pausation
+        pausation: true,
+        class: "stop-button hidden"
       })
     };
 
+    startTime = () => {
+      this.setState({
+        pausation: false,
+        stopped: true
+      })
+    };  
+
+    sendTime()
+    
     render() {
       const minutes = 20;
 
