@@ -12,7 +12,8 @@ import ReactCountdownClock from "react-countdown-clock";
     }
 
     myCallback = () => {
-      return "Done";
+      alert("now the worksession is complete");
+      callNote()
     };
 
     toggle = (pausation) => {
