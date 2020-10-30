@@ -15,13 +15,11 @@ class UserHomepage extends Component {
 
   render() {
     return (
-      <workSession>
       <Fragment >
-      {/* <TaskList /> */}
       <Timer />
+      <TaskList tasks={this.props.appState.currentTasks}/>
       {/* <CalendarTracker /> */}
     </Fragment>
-    </workSession>
     )
   }
 }
