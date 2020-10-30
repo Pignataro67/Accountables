@@ -39,18 +39,17 @@ import ReactCountdownClock from "react-countdown-clock";
           color="#232323"
           alpha={0.5}
           size={150}
-          onComplete={this.myCallback}
+          onComplete={()=> this.wrapUpSession()}
           paused = {this.state.pausation}
           weight={20}
         />
-          <div>
-            </div>
+        
               <div className="timer-btn">
-              {this.state.pausation ? (
-              <button className="start-button" onClick={() =>this.toggle()} >Start</button>):
+              {!this.state.pausation ? (
+              <button className="start-button" onClick={() => this.startTime()} >Start</button>) :
 
-              (<button onClick={()=> this.toggle()} 
-              className="pause-button">Pause</button>)
+              (<button onClick={()=> this.wrapUpSession()} 
+              className={this.state.class}>StoP</button>)
             }
             </div>
           </div>
