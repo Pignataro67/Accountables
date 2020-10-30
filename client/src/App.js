@@ -35,6 +35,39 @@ class App extends Component {
       })
     }
 
+    addATask = (e) => {
+      debugger;
+      e.preventDefault()
+      e.persist()
+      console.log(e.target[0].value)
+  
+      fetch("http://localhost:3001/tasks", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          status: "open",
+          title: e.target[0].value,
+          work_session_id: this.state.currentSession.id
+        })
+      })
+      .then(resp => resp.json())
+      .then(newTask => stateNewTask(newTask) )
+  
+      e.target[0].value = ""
+  
+      const stateNewTask = newTask => {
+         this.setState({
+           currentTasks: [
+             newTask,
+             ...this.state.currentTasks
+           ]
+         })
+       }
+    }
+
     componentDidMount() {
 
       fetch("http://localhost:3001/work_sessions")
