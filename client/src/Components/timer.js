@@ -24,11 +24,11 @@ import ReactCountdownClock from "react-countdown-clock";
       this.setState({
         pausation: false,
         stopped: true
-      })
-    };  
+      }) 
 
-    sendTime()
-    
+    this.props.sendTime()
+    };
+
     render() {
       const minutes = 20;
 

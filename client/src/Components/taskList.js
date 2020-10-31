@@ -10,12 +10,12 @@ const TaskList  = props => {
 
     return (
       <div className="">
-      <form>
+      <form onSubmit={props.addATask}>
         <input type="text" name="taskInput" />
         <input type="submit" value="Add"/>
       </form>
       <ul>
-        {addTasks()}
+        {displayTasks()}
       </ul>
       </div>
     )

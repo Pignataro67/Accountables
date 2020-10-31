@@ -16,8 +16,8 @@ class UserHomepage extends Component {
   render() {
     return (
       <Fragment >
-      <Timer />
-      <TaskList tasks={this.props.appState.currentTasks}/>
+      <Timer sendTime={this.props.sendTime}/>
+      <TaskList tasks={this.props.appState.currentTasks} addATask={this.props.addATask}/>
       {/* <CalendarTracker /> */}
     </Fragment>
     )
