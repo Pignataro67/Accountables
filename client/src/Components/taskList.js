@@ -2,9 +2,9 @@ import React from 'react';
 
 const TaskList  = props => {
 
-  const addTasks = () => {
-    return props.tasks.map(task => {
-      return <li>{task.title}</li>
+  const displayTasks = () => {
+    return props.tasks.map((task, idx) => {
+      return <li key={idx}>{task.title}</li>
     });
   }
 

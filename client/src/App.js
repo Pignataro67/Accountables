@@ -89,7 +89,6 @@ class App extends Component {
         })
   
         this.setState({
-          ...this.state,
           workSessions: sessions
         }, ()=> {getCurrentSession()})
       }
@@ -192,14 +191,6 @@ class App extends Component {
     
     getOpenTasks();
   };
-  
-render() {
-  return (
-      <div className="App">
-        <UserHomepage appState={this.state}/>
-      </div>
-    );
-  }
 }
 
 export default App;
