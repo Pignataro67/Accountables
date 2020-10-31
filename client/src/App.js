@@ -68,6 +68,15 @@ class App extends Component {
        }
     }
 
+    render() {
+      return (
+        <div className="App">
+          <UserHomepage appState={this.state} sendTime={this.sendTime} addATask={this.addATask}/>
+  
+        </div>
+      );
+    }
+
     componentDidMount() {
 
       fetch("http://localhost:3001/work_sessions")
