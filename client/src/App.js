@@ -80,8 +80,7 @@ class App extends Component {
     render() {
       return (
         <div className="App">
-          <UserHomepage appState={this.state} sendTime={this.sendTime} addATask={this.addATask}/>
-  
+          <UserHomepage appState={this.state} sendTime={this.sendTime} addATask={this.addATask} deleteTask={this.deleteTask}/>
         </div>
       );
     }
