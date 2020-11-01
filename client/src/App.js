@@ -18,6 +18,10 @@ class App extends Component {
       }
     }
     
+    deleteTask = task => {
+      console.log("delete button", task)
+    }
+
     sendTime = () => {
       let currentDate = new Date();
       let date = currentDate.toString();
@@ -39,9 +43,11 @@ class App extends Component {
       debugger;
       e.preventDefault()
       e.persist()
+      const input = e.target[0].value;
       console.log(e.target[0].value)
   
-      fetch("http://localhost:3001/tasks", {
+      if (input.length > 0) {
+        fetch("http://localhost:3001/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +55,7 @@ class App extends Component {
         },
         body: JSON.stringify({
           status: "open",
-          title: e.target[0].value,
+          title: input,
           work_session_id: this.state.currentSession.id
         })
       })
@@ -66,7 +72,10 @@ class App extends Component {
            ]
          })
        }
-    }
+    } else {
+      console.log("error")
+  }
+}
 
     render() {
       return (
