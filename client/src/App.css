@@ -15,7 +15,11 @@ body {
   background-color: gray;
   display: block;
   margin: 20px auto;
+}
 
+.delete-button {
+  /* background-color: black; */
+  display: inline-block;
 }
 
 .react-countdown-clock {
@@ -27,6 +31,16 @@ margin-left: -125px;
 .timer button {
   margin-left: auto;
   margin-right: auto;
+}
+
+li {
+  list-style: none;
+}
+
+.task-list {
+  height: 300px;
+  text-overflow: clip;
+  overflow: scroll;
 }
 
 .hidden {

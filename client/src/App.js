@@ -105,11 +105,11 @@ class App extends Component {
         if (this.state.currentSession.length === 0) {
           const lastSession = this.state.workSessions[this.state.workSessions.length - 1]
           if (lastSession.start_time === ""){
-            const sessions = this.state.workSessions.filter(session => session !== lastSession)  
+            const historicalSessions = this.state.workSessions.filter(hSession => hSession !== lastSession)  
           this.setState({
             ...this.state,
             currentSession: lastSession,
-            workSessions: sessions
+            workSessions: historicalSessions
           }, )
 
         } else {
