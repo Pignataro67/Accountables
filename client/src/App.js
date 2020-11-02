@@ -14,12 +14,20 @@ class App extends Component {
       allTasks: [],
       workSessions: [],
       currentSession: [],
-      currentTasks: []
+      currentTasks: [],
+      working: false
       }
     }
     
     deleteTask = task => {
       console.log("delete button", task)
+    }
+
+    beginTimer = () => {
+      this.sendTime()
+      this.setState({
+        working: true
+      })
     }
 
     sendTime = () => {
