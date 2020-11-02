@@ -88,7 +88,7 @@ class App extends Component {
     render() {
       return (
         <div className="App">
-          <UserHomepage appState={this.state} sendTime={this.sendTime} addATask={this.addATask} deleteTask={this.deleteTask}/>
+          <UserHomepage appState={this.state} beginTimer={this.beginTimer} addATask={this.addATask} deleteTask={this.deleteTask} working={this.state.working}/>
         </div>
       );
     }
@@ -174,7 +174,7 @@ class App extends Component {
   }
   
   componentDidUpdate() {
-
+    console.log("I updated")
     const getOpenTasks = () => {
       fetch("http://localhost:3001/tasks")
       .then(res => res.json())
@@ -192,6 +192,7 @@ class App extends Component {
 
     const reassignWS = openTasks => {
       openTasks.map(task => {
+        console.log(`%cWork Session ${this.state.currentSession.id} updated`, "color:green;")
         fetch(`http://localhost:3001/tasks/${task.id}`, {
           method: "PATCH",
           headers: {
@@ -202,6 +203,7 @@ class App extends Component {
             work_session_id: this.state.currentSession.id
           })
         })
+        .then(resp => resp.json()).then(json => console.log(json))
       })
     }
     
