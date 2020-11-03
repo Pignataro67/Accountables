@@ -34,6 +34,16 @@ class App extends Component {
         })
     }
 
+    uncheckUnclosed = task => {
+      console.log("uncheck open", task)
+      let updatedClosedTasks = this.state.closedTasks.filter(iTask =>{
+        return iTask !== task });
+    
+       this.setState({
+         closedTasks: updatedClosedTasks
+       })
+    }
+
     deleteTask = task => {
       console.log("delete button", task)
     }
