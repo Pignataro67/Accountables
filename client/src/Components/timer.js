@@ -26,7 +26,7 @@ import ReactCountdownClock from "react-countdown-clock";
         stopped: true
       }) 
 
-    this.props.sendTime()
+    this.props.beginTimer()
     };
 
     render() {
