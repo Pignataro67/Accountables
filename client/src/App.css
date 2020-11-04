@@ -4,10 +4,10 @@ body {
 
 .App {
   text-align: left;
-  width: 300px;
+  width: 80px;
   height: 90vh;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: white;
 }
 
@@ -26,6 +26,16 @@ body {
   margin-top: 20px;
   display: inline-block;
 margin-left: -125px;
+}
+
+.note {
+  background-color: blue;
+  height: 30%;
+  width: 90%;
+  text-align: center;
+  margin: auto;
+  margin-top: 0;
+  max-width: 550px;
 }
 
 .timer button {
