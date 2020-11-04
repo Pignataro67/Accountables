@@ -48,6 +48,22 @@ class App extends Component {
       console.log("delete button", task)
     }
 
+    fetch(`http://localhost:3001/tasks/${task.id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+    })
+
+    const updatedTasks = this.state.currentTasks.filter(oneTask => {
+      return oneTask !== task
+    })
+    this.setState({
+      currentTasks: updatedTasks
+    })
+  }
+
     beginTimer = () => {
       this.sendTime()
       this.setState({
