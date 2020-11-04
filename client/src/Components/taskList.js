@@ -1,5 +1,7 @@
 import React from 'react';
 
+props= tasks, addATask(), deleteTask(), working, toggleCheckbox()
+
 const TaskList  = props => {
 
   const displayTasks = () => {
@@ -12,7 +14,7 @@ const TaskList  = props => {
 
   const createEditTasks = (task, idx) => {
     return <li key={idx}>
-    <input type="checkbox" name={task.title} disabled />
+    <input type="checkbox" name={task} onChange={(e)=>props.toggleCheckbox(e, task)} />
     {task.title}
     <button className="delete-button" name="delete-button" onClick={()=> props.deleteTask(task)}>X</button>
     <button className="edit-button" name="edit-button">E</button>
