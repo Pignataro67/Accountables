@@ -28,17 +28,22 @@ class App extends Component {
       e.persist()
       this.updateWorkSession(e)
       this.closeCompletedTasks()
-  }
+      }
     }
 
-    checkClosed = task => {
-      console.log("check closed", task)
-      this.setState({
-        closedTasks: [
-          ...this.state.closedTasks,
-          task
-          ]
+    closeCompletedTasks = () => {
+      this.state.closedTasks.map(task => {
+      fetch(`http://localhost:3001/tasks/${task.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          status: "closed"
         })
+      }).then(resp => resp.json()).then(json => console.log(json))
+      })
     }
 
     uncheckUnclosed = task => {
