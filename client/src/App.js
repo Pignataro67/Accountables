@@ -46,6 +46,13 @@ class App extends Component {
       })
     }
 
+    updateWorkSession = (e) => {
+      const ws_id = this.state.currentSession.id;
+      const noteText = e.target.form[0].value;
+      const finishedTasks = this.state.closeTasks;
+      const startTime = this.state.startTime;
+      const endTime = this.state.endTime;
+
     uncheckUnclosed = task => {
       console.log("uncheck open", task)
       let updatedClosedTasks = this.state.closedTasks.filter(iTask =>{
