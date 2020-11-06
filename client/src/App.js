@@ -16,12 +16,19 @@ class App extends Component {
       currentSession: [],
       currentTasks: [],
       working: false,
-      closedTasks: []
+      closedTasks: [],
+      submitable: false,
+      startTime: "",
+      endTime: ""
       }
     }
     
-    toggleCheckbox = (e, task) => {
-      e.target.checked ? this.checkClosed(task) : this.uncheckUnclosed(task);
+    submitWorkSession = (e) => {
+      e.preventDefault()
+      e.persist()
+      this.updateWorkSession(e)
+      this.closeCompletedTasks()
+  }
     }
 
     checkClosed = task => {
