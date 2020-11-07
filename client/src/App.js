@@ -58,6 +58,22 @@ class App extends Component {
       let updatedClosedTasks = this.state.closedTasks.filter(iTask =>{
         return iTask !== task });
     
+        fetch(`http://localhost:3001/work_sessions/${ws_id}`, {
+          method: "PATCH",
+          headers: {
+             "Content-Type": "application/json",
+             "Accept": "application/json"
+           },
+           body: JSON.stringify({
+             start_time: startTime,
+             end_time: endTime,
+             note: noteText
+           })
+         })
+         .then(resp=> resp.json())
+         .then(json => console.log(json))
+       }
+
        this.setState({
          closedTasks: updatedClosedTasks
        })
