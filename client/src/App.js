@@ -79,6 +79,22 @@ class App extends Component {
        })
     }
 
+    toggleCheckbox = (e, task) => {
+      // debugger;
+      e.target.checked ? this.checkClosed(task) : this.uncheckUnclosed(task);
+  
+    }
+  
+    checkClosed = task => {
+      console.log("check closed", task)
+      this.setState({
+        closedTasks: [
+          ...this.state.closedTasks,
+          task
+          ]
+        })
+    }
+    
     deleteTask = task => {
       console.log("delete button", task)
     }
