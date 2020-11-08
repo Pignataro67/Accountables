@@ -9,9 +9,21 @@ import ReactCountdownClock from "react-countdown-clock";
       pausation: true,
       class: "stop-button",
       firstClick: false,
-      stopped: false
+      isAStopButton: false
       }
     }
+
+    startTime = () => {
+      console.log("TimeStamp")
+      this.setState({
+        pausation: false,
+        isAStopButton: true
+      })
+      this.props.beginTimer()
+  
+      // create checkboxes
+      // create notebox
+    };
 
     wrapUpSession = () => {
       this.setState({

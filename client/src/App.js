@@ -207,6 +207,11 @@ class App extends Component {
       );
     }
 
+    completeTimer={this.completeTimer}
+        submitable={this.state.submitable}
+        submitWorkSession={this.submitWorkSession}
+    />
+    </div>
     componentDidMount() {
 
       fetch("http://localhost:3001/work_sessions")
