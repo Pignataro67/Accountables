@@ -105,6 +105,20 @@ class App extends Component {
        })
     }
 
+    completeTimer = () => {
+      this.saveEndTime()
+      this.setState({
+        submitable: true
+      })
+    }
+  
+    saveEndTime = () => {
+      const date = this.createTime();
+      this.setState({
+        endTime: date
+      })
+    }
+
     deleteTask = task => {
       console.log("delete button", task)
     }
