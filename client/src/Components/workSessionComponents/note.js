@@ -5,16 +5,19 @@ class Note extends Component {
   renderNote = () => {
     return this.props.submitable ? <input type="submit" value="Submit" onClick={(e)=> this.props.submitWS(e)}/> : null
   }
-  
-  return (
-    <Fragment>
-        <form>
+
+  render() {
+    return (
+      <Fragment>
+        <form className="Note">
           <textarea>
 
           </textarea>
+          {this.renderNote()}
         </form>
-    </Fragment>
-  )
+      </Fragment>
+    )
+  }
 }
 
-export default note;
+export default Note;
