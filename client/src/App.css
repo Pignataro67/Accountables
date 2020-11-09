@@ -4,17 +4,17 @@ body {
 
 .App {
   text-align: left;
-  width: 80px;
-  height: 90vh;
+  width: 75px;
+  height: 85vh;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 25px;
   background-color: white;
 }
 
 .timer {
   background-color: gray;
   display: block;
-  margin: 20px auto;
+  margin: 15px auto;
 }
 
 .delete-button {
@@ -23,19 +23,19 @@ body {
 }
 
 .react-countdown-clock {
-  margin-top: 20px;
+  margin-top: 30px;
   display: inline-block;
 margin-left: -125px;
 }
 
 .note {
   background-color: blue;
-  height: 30%;
-  width: 90%;
+  height: 25%;
+  width: 85%;
   text-align: center;
   margin: auto;
   margin-top: 0;
-  max-width: 550px;
+  max-width: 525px;
 }
 
 .note textarea {
