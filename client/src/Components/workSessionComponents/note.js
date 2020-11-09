@@ -1,6 +1,10 @@
 import React, { Component, Fragment } from 'react';
 
-note = () =>  {
+class Note extends Component {
+  
+  renderNote = () => {
+    return this.props.submitable ? <input type="submit" value="Submit" onClick={(e)=> this.props.submitWS(e)}/> : null
+  }
   
   return (
     <Fragment>
