@@ -13,11 +13,16 @@ class UserHomepage extends Component {
     }
   }
 
+  renderNote = () => {
+    return this.props.working ? <Note submitable={this.props.submitable} submitWS={this.props.submitWorkSession}/> : null
+  }
+
   render() {
     return (
       <Fragment >
-      <Timer beginTimer={this.props.beginTimer}/>
+      <Timer beginTimer={this.props.beginTimer} completeTimer={this.props.completeTimer}/>
       <TaskList tasks={this.props.appState.currentTasks} addATask={this.props.addATask} deleteTask={this.props.deleteTask} working={this.props.working} toggleCheckbox={this.props.toggleCheckbox}/>
+      {this.renderNote()}
       {/* <CalendarTracker /> */}
     </Fragment>
     )
