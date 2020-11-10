@@ -40,9 +40,16 @@ margin-left: -125px;
   margin-right: auto;
 }
 
+.timer-btn {
+height: 20px;
+padding: 5px;
+}
+
 .start-button, .stop-button {
-  margin: -10px auto 5px auto;
+  margin: auto;
   display: block;
+  font-size: 12px;
+  padding: 0;
 }
 
 .timer button {
