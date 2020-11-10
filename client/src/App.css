@@ -11,10 +11,15 @@ body {
   background-color: white;
 }
 
+input[type=text]:focus, textarea:focus {
+  outline-color: gray;
+  outline: 1px solid #cccc
+}
+
 .timer {
   background-color: gray;
   display: block;
-  margin: 15px auto;
+  margin: 20px auto 0 auto;
 }
 
 .delete-button {
@@ -28,26 +33,11 @@ body {
 margin-left: -125px;
 }
 
-.note {
-  background-color: blue;
-  height: 25%;
-  width: 85%;
-  text-align: center;
-  margin: auto;
-  margin-top: 0;
-  max-width: 525px;
-}
-
-.note textarea {
-  height: 100%;
-  width:100%;
-}
-
-.note input {
-  display: block;
-  margin: auto;
-  background-color: white;
-  width: 50%;
+.timer {
+  display: inline-block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .start-button, .stop-button {
