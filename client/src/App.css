@@ -109,6 +109,18 @@ li {
   display: inline-block;
 }
 
+.note {
+  height: 28%;
+  width: 90%;
+  text-align: center;
+  margin: auto;
+  margin-top: 0;
+  max-width: 550px;
+  border: .5px solid #e1e3e1;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 .hidden {
   display: none;
 }
