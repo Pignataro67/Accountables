@@ -145,11 +145,9 @@ class App extends Component {
     }
 
     addATask = (e) => {
-      debugger;
-      e.preventDefault()
+      e.preventDefault();
       e.persist()
       const input = e.target[0].value;
-      console.log(e.target[0].value)
   
       if (input.length > 0) {
         fetch("http://localhost:3001/tasks", {
@@ -185,16 +183,12 @@ class App extends Component {
     render() {
       return (
         <div className="App">
-          <UserHomepage appState={this.state} beginTimer={this.beginTimer} addATask={this.addATask} deleteTask={this.deleteTask} working={this.state.working} toggleCheckbox={this.toggleCheckbox}/>
+          <UserHomepage appState={this.state} beginTimer={this.beginTimer} addATask={this.addATask} deleteTask={this.deleteTask} working={this.state.working} toggleCheckbox={this.toggleCheckbox}
+          />
         </div>
       );
     }
 
-    completeTimer={this.completeTimer}
-        submitable={this.state.submitable}
-        submitWorkSession={this.submitWorkSession}
-    />
-    </div>
     componentDidMount() {
 
       fetch("http://localhost:3001/work_sessions")
@@ -252,7 +246,6 @@ class App extends Component {
     .then(resp => resp.json())
     .then(tasks => {
       filterCurrentTasks(tasks);
-      getAllTasks(tasks);
     })
 
     const filterCurrentTasks = tasks => {
@@ -266,14 +259,6 @@ class App extends Component {
         currentTasks: currentTasks
       })
     }
-
-    const getAllTasks = tasks => {
-      this.setState({
-        ...this.state,
-        allTasks: tasks
-      })
-    }
-  }
   
   componentDidUpdate() {
     console.log("I updated")
@@ -286,15 +271,13 @@ class App extends Component {
     const filterOpenTasks = tasks => {
       const openTasks = tasks.filter(task => {
         return task.status === "open"
-
-
-        reassignWS(openTasks)
       })
+      reassignWS(openTasks)
     }
 
     const reassignWS = openTasks => {
       openTasks.map(task => {
-        console.log(`%cWork Session ${this.state.currentSession.id} updated`, "color:green;")
+        
         fetch(`http://localhost:3001/tasks/${task.id}`, {
           method: "PATCH",
           headers: {
@@ -304,8 +287,7 @@ class App extends Component {
           body: JSON.stringify({
             work_session_id: this.state.currentSession.id
           })
-        })
-        .then(resp => resp.json()).then(json => console.log(json))
+        }).then(resp => resp.json()).then(json => console.log(json))
       })
     }
     
