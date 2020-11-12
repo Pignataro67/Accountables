@@ -121,6 +121,18 @@ li {
   box-sizing: border-box;
 }
 
+.note textarea {
+  height: 98%;
+  width: 98%;
+}
+
+.note input {
+  display: block;
+  margin: 5px auto;
+  background-color: white;
+  width: 30%;
+}
+
 .hidden {
   display: none;
 }
