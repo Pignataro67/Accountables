@@ -24,7 +24,6 @@ class App extends Component {
     }
     
     submitWorkSession = (e) => {
-      e.preventDefault()
       e.persist()
       this.updateWorkSession(e)
       this.closeCompletedTasks()
@@ -52,11 +51,6 @@ class App extends Component {
       const finishedTasks = this.state.closeTasks;
       const startTime = this.state.startTime;
       const endTime = this.state.endTime;
-
-    uncheckUnclosed = task => {
-      console.log("uncheck open", task)
-      let updatedClosedTasks = this.state.closedTasks.filter(iTask =>{
-        return iTask !== task });
     
         fetch(`http://localhost:3001/work_sessions/${ws_id}`, {
           method: "PATCH",
@@ -70,19 +64,11 @@ class App extends Component {
              note: noteText
            })
          })
-         .then(resp=> resp.json())
-         .then(json => console.log(json))
        }
-
-       this.setState({
-         closedTasks: updatedClosedTasks
-       })
-    }
 
     toggleCheckbox = (e, task) => {
       // debugger;
-      e.target.checked ? this.checkClosed(task) : this.uncheckUnclosed(task);
-  
+      e.target.checked ? this.checkClosed(task) : this.uncheckUnclosed(task);  
     }
   
     checkClosed = task => {
@@ -120,9 +106,6 @@ class App extends Component {
     }
 
     deleteTask = task => {
-      console.log("delete button", task)
-    }
-
     fetch(`http://localhost:3001/tasks/${task.id}`, {
       method: "DELETE",
       headers: {
@@ -146,7 +129,7 @@ class App extends Component {
       })
     }
 
-    aveStartTime = () => {
+    saveStartTime = () => {
     const date = this.createTime();
       
     this.setState({
