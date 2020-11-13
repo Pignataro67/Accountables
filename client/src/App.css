@@ -4,10 +4,10 @@ body {
 
 .App {
   text-align: left;
-  width: 75px;
-  height: 85vh;
+  width: 80px;
+  height: 90vh;
   margin: auto;
-  margin-top: 25px;
+  margin-top: 30px;
   background-color: white;
 }
 
@@ -19,7 +19,7 @@ input[type=text]:focus, textarea:focus {
 .timer {
   background-color: gray;
   display: block;
-  margin: 20px auto 0 auto;
+  margin: 25px auto 0 auto;
 }
 
 .delete-button {
@@ -28,9 +28,9 @@ input[type=text]:focus, textarea:focus {
 }
 
 .react-countdown-clock {
-  margin-top: 30px;
+  margin-top: 25px;
   display: inline-block;
-margin-left: -125px;
+  margin-left: -125px;
 }
 
 .timer {
@@ -41,14 +41,14 @@ margin-left: -125px;
 }
 
 .timer-btn {
-height: 20px;
-padding: 5px;
+height: 15px;
+padding: 10px;
 }
 
 .start-button, .stop-button {
   margin: auto;
   display: block;
-  font-size: 12px;
+  font-size: 9px;
   padding: 0;
 }
 
