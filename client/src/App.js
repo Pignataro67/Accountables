@@ -72,18 +72,16 @@ class App extends Component {
     }
   
     checkClosed = task => {
-      console.log("check closed", task)
       this.setState({
         closedTasks: [
           ...this.state.closedTasks,
           task
-          ]
-        })
+        ]
+      })
     }
 
     uncheckUnclosed = task => {
-      console.log("uncheck open", task)
-      let updatedClosedTasks = this.state.closedTasks.filter(iTask =>{
+      let updatedClosedTasks = this.state.closedTasks.filter(iTask => {
         return iTask !== task });
   
        this.setState({
@@ -163,7 +161,7 @@ class App extends Component {
         })
       })
       .then(resp => resp.json())
-      .then(newTask => stateNewTask(newTask) )
+      .then(newTask => stateNewTask(newTask))
   
       e.target[0].value = ""
   
@@ -183,7 +181,16 @@ class App extends Component {
     render() {
       return (
         <div className="App">
-          <UserHomepage appState={this.state} beginTimer={this.beginTimer} addATask={this.addATask} deleteTask={this.deleteTask} working={this.state.working} toggleCheckbox={this.toggleCheckbox}
+          <UserHomepage 
+            appState={this.state} 
+            beginTimer={this.beginTimer} 
+            addATask={this.addATask} 
+            deleteTask={this.deleteTask} 
+            working={this.state.working} 
+            toggleCheckbox={this.toggleCheckbox} 
+            completeTimer={this.completeTimer}
+            submitable={this.state.submitable}
+            submitWorkSession={this.submitWorkSession}
           />
         </div>
       );
@@ -196,7 +203,7 @@ class App extends Component {
       .then(data => filterWorkSessions(data))
   
       const filterWorkSessions = (data) => {
-        let sessions = data.filter( item => {
+        let sessions = data.filter(item => {
           return item.user_id === this.state.user.id
         })
   
