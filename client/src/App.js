@@ -67,7 +67,6 @@ class App extends Component {
        }
 
     toggleCheckbox = (e, task) => {
-      // debugger;
       e.target.checked ? this.checkClosed(task) : this.uncheckUnclosed(task);  
     }
   
@@ -174,7 +173,6 @@ class App extends Component {
          })
        }
     } else {
-      console.log("error")
   }
 }
 
@@ -268,7 +266,6 @@ class App extends Component {
     }
   
   componentDidUpdate() {
-    console.log("I updated")
     const getOpenTasks = () => {
       fetch("http://localhost:3001/tasks")
       .then(res => res.json())
