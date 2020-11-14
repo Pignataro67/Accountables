@@ -78,24 +78,24 @@ padding: 15px;
 }
 
 .task-div input[type=submit] {
-  width: 50px;
-  margin-left: 10px;
+  width: 65px;
+  margin-left: 15px;
 }
 
 .task-div input, .task-list {
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px;
   box-sizing: border-box;
 }
 
 .task-list {
-  height: 80%;
+  height: 75%;
   text-overflow: clip;
   overflow: scroll;
   background-color: #caedd388;
   width: 80%;
   margin: auto;
-  padding: 5px;
+  padding: 10px;
 }
 
 li {
@@ -110,8 +110,8 @@ li {
 }
 
 .note {
-  height: 28%;
-  width: 90%;
+  height: 30%;
+  width: 95%;
   text-align: center;
   margin: auto;
   margin-top: 0;
