@@ -41,14 +41,14 @@ input[type=text]:focus, textarea:focus {
 }
 
 .timer-btn {
-height: 15px;
-padding: 10px;
+height: 20px;
+padding: 15px;
 }
 
 .start-button, .stop-button {
   margin: auto;
   display: block;
-  font-size: 9px;
+  font-size: 10px;
   padding: 0;
 }
 
@@ -62,15 +62,15 @@ padding: 10px;
   /* background-color: purple; */
   max-width: 400px;
   margin: auto;
-  max-height: 400px;
+  max-height: 395px;
   width: 100%;
 }
 
 .task-div form, .task-list {
   width: 80%;
   margin: auto;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .task-div form {
@@ -79,7 +79,7 @@ padding: 10px;
 
 .task-div input[type=submit] {
   width: 50px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .task-div input, .task-list {
