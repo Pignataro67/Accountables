@@ -21,7 +21,10 @@ class UserHomepage extends Component {
     return (
       <Fragment >
       <Timer beginTimer={this.props.beginTimer} completeTimer={this.props.completeTimer}/>
-      <TaskList tasks={this.props.appState.currentTasks} addATask={this.props.addATask} deleteTask={this.props.deleteTask} working={this.props.working} toggleCheckbox={this.props.toggleCheckbox}/>
+        <TaskList tasks={this.props.appState.currentTasks} addATask={this.props.addATask}
+        deleteTask={this.props.deleteTask}
+        working={this.props.working}
+        toggleCheckbox={this.props.toggleCheckbox}/>
       {this.renderNote()}
       {/* <CalendarTracker /> */}
     </Fragment>

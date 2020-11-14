@@ -6,7 +6,6 @@ class Timer extends Component {
     return "Done";
   };
 
-
   render() {
     const minutes = 20;
     let pausation = false;

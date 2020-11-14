@@ -191,15 +191,6 @@ li {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .react-countdown-clock {
 display: block;
     margin: 40px auto;
