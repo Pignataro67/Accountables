@@ -1,6 +1,6 @@
 import React from 'react';
 
-props= tasks, addATask(), deleteTask(), working, toggleCheckbox()
+// props= tasks, addATask(), deleteTask(), working, toggleCheckbox()
 
 const TaskList  = props => {
 
@@ -9,7 +9,6 @@ const TaskList  = props => {
       return props.working ?
       createCheckedTasks(task, idx) : createEditTasks(task, idx)
     });
-
   }
 
   const createEditTasks = (task, idx) => {

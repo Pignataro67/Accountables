@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Calendar from 'react-calendar';
 
 class Calendar extends Component {
 
@@ -9,4 +10,4 @@ class Calendar extends Component {
   }
 }
 
-export default Calendar;
+export default CalendarTracker;
