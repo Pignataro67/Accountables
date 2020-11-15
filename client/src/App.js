@@ -67,10 +67,12 @@ class App extends Component {
        }
 
     toggleCheckbox = (e, task) => {
+      // debugger;
       e.target.checked ? this.checkClosed(task) : this.uncheckUnclosed(task);  
     }
   
     checkClosed = task => {
+      console.log("check closed", task)
       this.setState({
         closedTasks: [
           ...this.state.closedTasks,
@@ -80,7 +82,8 @@ class App extends Component {
     }
 
     uncheckUnclosed = task => {
-      let updatedClosedTasks = this.state.closedTasks.filter(iTask => {
+      console.log("uncheck open", task)
+      let updatedClosedTasks = this.state.closedTasks.filter(iTask =>{
         return iTask !== task });
   
        this.setState({
@@ -160,7 +163,7 @@ class App extends Component {
         })
       })
       .then(resp => resp.json())
-      .then(newTask => stateNewTask(newTask))
+      .then(newTask => stateNewTask(newTask) )
   
       e.target[0].value = ""
   
@@ -202,7 +205,7 @@ class App extends Component {
       .then(data => filterWorkSessions(data))
   
       const filterWorkSessions = (data) => {
-        let sessions = data.filter(item => {
+        let sessions = data.filter( item => {
           return item.user_id === this.state.user.id
         })
   
