@@ -20,9 +20,6 @@ import ReactCountdownClock from "react-countdown-clock";
         isAStopButton: true
       })
       this.props.beginTimer()
-  
-      // create checkboxes
-      // create notebox
     };
 
     wrapUpSession = () => {
@@ -30,6 +27,7 @@ import ReactCountdownClock from "react-countdown-clock";
         pausation: true,
         class: "stop-button hidden"
       })
+      this.props.completeTimer()
     };
 
     startTime = () => {
@@ -42,7 +40,7 @@ import ReactCountdownClock from "react-countdown-clock";
     };
 
     render() {
-      const minutes = 1;
+      const minutes = 120;
 
       return (
         <div className="timer">

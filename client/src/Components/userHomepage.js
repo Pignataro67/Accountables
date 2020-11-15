@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TaskList from './taskList';
 import CalendarTracker from './calendar';
 import Timer from './timer';
-import WorkSession from './workSession';
+import Note from './workSessionComponents/note';
 
 class UserHomepage extends Component {
 
@@ -26,7 +26,6 @@ class UserHomepage extends Component {
         working={this.props.working}
         toggleCheckbox={this.props.toggleCheckbox}/>
       {this.renderNote()}
-      {/* <CalendarTracker /> */}
     </Fragment>
     )
   }
